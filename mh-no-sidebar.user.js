@@ -11,7 +11,9 @@
 // @run-at      document-end
 // ==/UserScript==
 
-(() => {
+((function () {
+	'use strict';
+
 	const style = document.createElement('style');
 	style.innerHTML = `.pageFrameView {
 		grid-template-columns: [first] auto [content-start] 760px [content-end] auto [last];
@@ -20,4 +22,4 @@
 		display: none;
 	}`;
 	document.head.appendChild(style);
-})();
+})());
