@@ -1,4 +1,4 @@
-# mh-no-sidebar
+# 🐭️ MouseHunt - No Sidebar
 
 A Userscript for [MouseHunt](https://mousehuntgame.com) that hides the sidebar.
 
