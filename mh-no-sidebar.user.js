@@ -6,20 +6,23 @@
 // @author       bradp
 // @namespace    bradp
 // @match        https://www.mousehuntgame.com/*
-// @icon         https://brrad.com/mouse.png
+// @icon         https://i.mouse.rip/mouse.png
 // @grant        none
 // @run-at      document-end
 // ==/UserScript==
 
 ((function () {
-	'use strict';
+  'use strict';
 
-	const style = document.createElement('style');
-	style.innerHTML = `.pageFrameView {
-		grid-template-columns: [first] auto [content-start] 760px [content-end] auto [last];
-	}
-	.pageSidebarView, .pageFrameView-footer {
-		display: none;
-	}`;
-	document.head.appendChild(style);
+  const style = document.createElement('style');
+  style.innerHTML = `.pageSidebarView,
+  .pageFrameView-footer {
+    display: none;
+  }
+
+  .pageFrameView {
+    -ms-grid-columns: [first] auto [content-start] 760px [content-end] auto [last];
+    grid-template-columns: [first] auto [content-start] 760px [content-end] auto [last];
+  }`;
+  document.head.appendChild(style);
 })());
