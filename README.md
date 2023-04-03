@@ -1,6 +1,6 @@
 # 🐭️ MouseHunt - No Sidebar
 
-A Userscript for [MouseHunt](https://mousehuntgame.com) that hides the sidebar.
+A Userscript for [MouseHunt](https://mousehuntgame.com) that hides the sidebar and moves it into a tab in the top menu.
 
 ## Installation
 
