@@ -1,6 +1,6 @@
 {
   "name": "mh-no-sidebar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "mh-no-sidebar.user.js",
   "scripts": {
