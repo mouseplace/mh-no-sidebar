@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - No Sidebar
-// @version      1.0.5
+// @version      1.0.6
 // @description  Hides the sidebar and moves it into a tab in the top menu.
 // @license      MIT
 // @author       bradp
@@ -75,7 +75,7 @@
   };
 
   const addBodyClass = () => {
-    const body = document.querySelector('body');
+    const body = document.querySelector('.pageFrameView');
     if (! body) {
       return;
     }
@@ -84,33 +84,33 @@
   };
 
   addStyles(`/* Reflow grid for no sidebar */
-  body.no-sidebar .pageFrameView {
+  .pageFrameView {
     -ms-grid-columns: [first] auto [content-start] 760px [content-end] auto [last];
     grid-template-columns: [first] auto [content-start] 760px [content-end] auto [last];
   }
 
   /* Sidebar moved into tab */
-  body.no-sidebar .pageFrameView .pageSidebarView-user {
+  .pageFrameView.no-sidebar .pageSidebarView-user {
     padding: 0 0 10px;
     border-bottom: none;
   }
 
-  body.no-sidebar .pageSidebarView {
+  .pageFrameView.no-sidebar .pageSidebarView {
     display: none;
   }
 
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar.dropdown {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar.dropdown {
     cursor: unset;
   }
 
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent {
     width: 365px;
 
     /* 10px padding + 180px scoreboard + 5px gap + 180px scoreboard + 10px padding */
     padding: 10px;
   }
 
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a {
     display: unset;
     height: auto;
     padding: 0;
@@ -118,14 +118,14 @@
     border-bottom: none;
   }
 
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a:hover,
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a:focus {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a:hover,
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a:focus {
     text-decoration: underline;
     background-color: unset;
   }
 
   /* Image */
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a.pageSidebarView-user-image {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a.pageSidebarView-user-image {
     width: 30px;
     height: 30px;
     padding: 0;
@@ -136,7 +136,7 @@
   }
 
   /* Name */
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .pageSidebarView-user a:nth-child(2) {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .pageSidebarView-user a:nth-child(2) {
     display: inline;
     padding: 0;
     font-size: inherit;
@@ -146,12 +146,12 @@
   }
 
   /* <br> between name and logout */
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .pageSidebarView-user br {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .pageSidebarView-user br {
     display: none;
   }
 
   /* Logout */
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a.pageSidebarView-user-logout {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent a.pageSidebarView-user-logout {
     display: inline-block;
     float: right;
     height: auto;
@@ -164,19 +164,19 @@
     border-radius: 0;
   }
 
-  body.no-sidebar .scoreboardRankingsWrapper {
+  .pageFrameView.no-sidebar .scoreboardRankingsWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
     line-height: 14px;
   }
 
-  body.no-sidebar .scoreboardRelativeRankingTableView-table {
+  .pageFrameView.no-sidebar .scoreboardRelativeRankingTableView-table {
     padding-top: 5px;
     background: #fff;
   }
 
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .scoreboardRankingsWrapper a {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .scoreboardRankingsWrapper a {
     font-size: 9px;
     color: #3b5998;
     text-decoration: none;
@@ -184,8 +184,8 @@
     border-radius: 0;
   }
 
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .scoreboardRankingsWrapper a:hover,
-  body.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .scoreboardRankingsWrapper a:focus {
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .scoreboardRankingsWrapper a:hover,
+  .pageFrameView.no-sidebar .mousehuntHeaderView .menuItem.sidebar .dropdownContent .scoreboardRankingsWrapper a:focus {
     text-decoration: underline;
   }`);
 
