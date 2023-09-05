@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - No Sidebar
-// @version      1.0.6
+// @version      1.2.0
 // @description  Hides the sidebar and moves it into a tab in the top menu.
 // @license      MIT
 // @author       bradp
@@ -85,8 +85,8 @@
 
   addStyles(`/* Reflow grid for no sidebar */
   .pageFrameView {
-    -ms-grid-columns: [first] auto [content-start] 760px [content-end] auto [last];
-    grid-template-columns: [first] auto [content-start] 760px [content-end] auto [last];
+    -ms-grid-columns: [first] auto [content-start] 760px [sidebar] 0 [content-end] auto [last];
+    grid-template-columns: [first] auto [content-start] 760px [sidebar] 0 [content-end] auto [last];
   }
 
   /* Sidebar moved into tab */
