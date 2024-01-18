@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - No Sidebar
-// @version      1.2.0
+// @version      1.3.0
 // @description  Hides the sidebar and moves it into a tab in the top menu.
 // @license      MIT
 // @author       bradp
@@ -10,6 +10,7 @@
 // @grant        none
 // @run-at       document-end
 // @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.7.3/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/script-migration@1.1.1
 // ==/UserScript==
 
 ((function () {
@@ -195,4 +196,6 @@
     setTimeout(addBodyClass, 500);
   } });
   moveSidebar();
+
+  migrateUserscript('🐭️ MouseHunt - No Sidebar', 'https://greasyfork.org/en/scripts/449491-mousehunt-no-sidebar');
 })());
